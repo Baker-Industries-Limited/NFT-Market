@@ -25,3 +25,12 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+
+.full-bg {
+  background: url("../public/images/bg.png");
+  width: 100%;
+}
+
+a {
+  text-decoration: none !important;
+}
