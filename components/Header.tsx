@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 //import Sidebar from "./Sidebar";
 import Link from "next/link";
-/* import { ConnectButton } from "@rainbow-me/rainbowkit"; */
+import { ConnectButton } from "@rainbow-me/rainbowkit";
 
 export default function Header() {
   const [toggle, setToggle] = useState(false);
@@ -16,7 +16,7 @@ export default function Header() {
         </Link>
 
         <div className="inner-header">
-          {/*  <ConnectButton.Custom>
+          <ConnectButton.Custom>
             {({
               account,
               chain,
@@ -90,7 +90,7 @@ export default function Header() {
                 </div>
               );
             }}
-          </ConnectButton.Custom> */}
+          </ConnectButton.Custom>
           <img
             style={{ cursor: "pointer" }}
             onClick={() => changeToggle()}

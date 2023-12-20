@@ -1,5 +1,6 @@
 "use client";
 import React, { useState, useEffect } from "react";
+import gsap from "gsap";
 import { motion } from "framer-motion";
 import Footer from "../../../components/Footer";
 import Header from "../../../components/Header";
@@ -39,6 +40,30 @@ export default function Home() {
     "s",
     ".",
   ];
+
+  useEffect(() => {
+    // set viewport width, for mobile devices.
+    let vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty("--vh", `${vh}px`);
+
+    // To stop the app from flashing, we hide the entire body in the css and then show it when the JavaScript loads.
+    gsap.to("body", 0, { css: { visibility: "visible" } });
+    // custom cursor
+    /* const cursorList = document.addEventListener("mousemove", (e) => {
+      cursorRef.current.setAttribute(
+        "style",
+        `transform: translate3d(${e.pageX - 10}px, ${e.pageY - 10}px, 0px)`
+      );
+      cursorRef2.current.setAttribute(
+        "style",
+        `transform: translate3d(${e.pageX + 10}px, ${e.pageY + 10}px, 0px)`
+      );
+    }); */
+
+    return () => {
+      //document.removeEventListener("mousemove", cursorList);
+    };
+  }, []);
 
   useEffect(() => {
     window.scrollTo({
