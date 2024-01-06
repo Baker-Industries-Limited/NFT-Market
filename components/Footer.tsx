@@ -1,12 +1,19 @@
 import React from "react";
 import Link from "next/link";
+import { Inter } from "next/font/google";
+
+const inter = Inter({
+  subsets: ["latin"],
+});
 
 export default function Footer() {
   return (
     <div className="foot">
       <div className="footer">
         <div>
-          <img className="lg" src="./images/lg.svg" alt="logo" />
+          <Link href="/">
+            <img className="lg" src="./images/lg.svg" alt="logo" />
+          </Link>
 
           {/*  <div className="social-footer">
             <img src="./images/telegram.svg" alt="telegram" />
@@ -21,30 +28,35 @@ export default function Footer() {
         <div className="footer-inner">
           <div>
             <Link href="/">
-              <div className="footer_text2">Home</div>
+              <div className={`${inter.className} footer_text2`}>Home</div>
             </Link>
             <Link href="/mint">
-              <div className="footer_text2">Mint</div>
+              <div className={`${inter.className} footer_text2`}>Mint</div>
             </Link>
             <Link href="/collections">
-              <div className="footer_text2">Collections</div>
+              <div className={`${inter.className} footer_text2`}>
+                Collections
+              </div>
             </Link>
           </div>
           <div>
-            <div className="footer_text2">Whitepaper</div>
+            <div className={`${inter.className} footer_text2`}>Whitepaper</div>
             <Link href="/roadmap">
-              <div className="footer_text2">Roadmap</div>
+              <div className={`${inter.className} footer_text2`}>Roadmap</div>
             </Link>
             <Link href="/contact">
-              <div className="footer_text2">Contact us</div>
+              <div className={`${inter.className} footer_text2`}>
+                Contact us
+              </div>
             </Link>
           </div>
-          <div className="footer_text11">
+          <div className={`${inter.className} footer_text11`}>
             {" "}
             &copy; 2023 Baker Industries Limited. All rights Reserved
           </div>
 
           <img
+            style={{ cursor: "pointer" }}
             onClick={() => {
               window.scroll({
                 top: 0,

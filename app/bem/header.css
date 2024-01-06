@@ -32,8 +32,8 @@
 
 .btn1 {
   width: 221px;
-  height: 56px;
   border: none;
+  padding: 10px;
   font-family: "Michroma";
   font-style: normal;
   font-weight: 400;

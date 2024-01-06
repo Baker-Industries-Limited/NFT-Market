@@ -1,4 +1,6 @@
 "use client";
+
+import { Inter, Raleway, Michroma } from "next/font/google";
 import React, { useState, useEffect } from "react";
 import gsap from "gsap";
 import { motion } from "framer-motion";
@@ -8,6 +10,14 @@ import PreLoader from "../../../components/Preloader";
 import AnimatedLetters from "../../../components/AnimatedLetters";
 import Tilt from "react-parallax-tilt";
 import Link from "next/link";
+
+const inter = Inter({
+  subsets: ["latin"],
+});
+
+const rale = Raleway({
+  subsets: ["latin"],
+});
 
 export default function Home() {
   const [letterClass, setLetterClass] = useState("text-animate");
@@ -82,7 +92,7 @@ export default function Home() {
         <Header />
         <main>
           <section>
-            <h2 className="home_text1">
+            <h2 className={`${inter.className} home_text1`}>
               <AnimatedLetters
                 letterClass={letterClass}
                 strArray={nameArray}
@@ -94,18 +104,18 @@ export default function Home() {
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 8 }}
-              className="home_text2"
+              className={`${rale.className} home_text2`}
             >
               Earn 2X passive income minting unique Bserve NFTs (Non-Fungible
               Tokens)
             </motion.p>
 
-            <Link href="/mint">
+            <Link className="mint-width" href="/mint">
               <motion.button
                 initial={{ opacity: 0, y: 50 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 8 }}
-                className="home-mint"
+                className={`${inter.className} home-mint`}
               >
                 Mint NFTs
               </motion.button>
@@ -132,8 +142,10 @@ export default function Home() {
           <section className="home-sec3">
             <div className="home-sec-flex">
               <div className="homeh">
-                <div className="home-sec-text4">About Bakerserve</div>
-                <div className="home-sec-text5">
+                <div className={`${inter.className} home-sec-text4`}>
+                  About Bakerserve
+                </div>
+                <div className={`${rale.className} home-sec-text5`}>
                   Bakerserve is the world’s first token revolutionizing
                   Traditional Agriculture, Real Estate to web3. Contrary to
                   popular belief, you do not need a large sum of money to invest
@@ -152,35 +164,45 @@ export default function Home() {
           </section>
 
           <section className="home-sec2">
-            <div className="home-sec-text3">How to mint</div>
+            <div className={`${inter.className} home-sec-text3`}>
+              How to mint
+            </div>
 
             <div className="home-sec-flex">
               <div className="home-sec-box">
-                <div className="home-circle">1</div>
-                <div className="home-sec-text1 ">Connect your wallet</div>
-                <div className="home-sec-text2">
+                <div className={`${inter.className} home-circle`}>1</div>
+                <div className={`${inter.className} home-sec-text1`}>
+                  Connect your wallet
+                </div>
+                <div className={`${rale.className} home-sec-text2`}>
                   Connect your Metamask wallet or any of your chosen wallet
                 </div>
               </div>
               <div className="home-sec-box">
-                <div className="home-circle">2</div>
-                <div className="home-sec-text1 ">Select NFT</div>
-                <div className="home-sec-text2">
+                <div className={`${inter.className} home-circle`}>2</div>
+                <div className={`${inter.className} home-sec-text1`}>
+                  Select NFT
+                </div>
+                <div className={`${rale.className} home-sec-text2`}>
                   Browse to find NFT of choice
                 </div>
               </div>
               <div className="home-sec-box">
-                <div className="home-circle">3</div>
-                <div className="home-sec-text1 ">Approve Transaction</div>
-                <div className="home-sec-text2">
+                <div className={`${inter.className} home-circle`}>3</div>
+                <div className={`${inter.className} home-sec-text1`}>
+                  Approve Transaction
+                </div>
+                <div className={`${rale.className} home-sec-text2`}>
                   To complete the minting process, you need to click the
                   “Approve” button
                 </div>
               </div>
               <div className="home-sec-box">
-                <div className="home-circle">4</div>
-                <div className="home-sec-text1 ">View Minted NFTs</div>
-                <div className="home-sec-text2">
+                <div className={`${inter.className} home-circle`}>4</div>
+                <div className={`${inter.className} home-sec-text1`}>
+                  View Minted NFTs
+                </div>
+                <div className={`${rale.className} home-sec-text2`}>
                   You will receive your minted NFT in your wallet in few
                   seconds. You can also view your NFT on “My Collections” page
                 </div>
@@ -190,8 +212,10 @@ export default function Home() {
 
           <section className="home-sec5">
             <div>
-              <div className="home-sec-text6">Farm NFTs</div>
-              <div className="home-sec-text7">
+              <div className={`${inter.className} home-sec-text6`}>
+                Farm NFTs
+              </div>
+              <div className={`${rale.className} home-sec-text7`}>
                 Bserve Farms was launched for a larger number of people who do
                 not have a great deal of money to invest in agriculture but
                 would still like access to high growth potential investments
@@ -200,16 +224,18 @@ export default function Home() {
                 annum depending on the NFT you mint.
               </div>
               <Link href="/mint">
-                <button className="home-sec-but1">Mint Farm NFTs</button>
+                <button className={`${inter.className} home-sec-but1`}>
+                  Mint Farm NFTs
+                </button>
               </Link>
             </div>
           </section>
 
           <section>
-            <div className="home-sec-text8">
+            <div className={`${inter.className} home-sec-text8`}>
               Join Our Community & Get Early Updates{" "}
             </div>
-            <div className="home-sec-text9">
+            <div className={`${rale.className} home-sec-text9`}>
               Community building is our priority, it’s important for us to keep
               forming, engaging and providing income-changing benefits to
               holders of our NFTs.

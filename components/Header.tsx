@@ -1,7 +1,18 @@
+/* eslint-disable @next/next/no-async-client-component */
+/* eslint-disable */
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-nocheck
+
 import React, { useState } from "react";
-//import Sidebar from "./Sidebar";
+import Sidebar from "./Sidebar";
 import Link from "next/link";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
+import { Michroma } from "next/font/google";
+
+const michroma = Michroma({
+  subsets: ["latin"],
+  weight: "400",
+});
 
 export default function Header() {
   const [toggle, setToggle] = useState(false);
@@ -51,7 +62,7 @@ export default function Header() {
                     if (!connected) {
                       return (
                         <button
-                          className="btn1"
+                          className={`${michroma.className} btn1`}
                           onClick={openConnectModal}
                           type="button"
                         >
@@ -63,7 +74,7 @@ export default function Header() {
                     if (chain.unsupported || chain.id !== 97) {
                       return (
                         <button
-                          className="btn1"
+                          className={`${michroma.className} btn1`}
                           onClick={openChainModal}
                           type="button"
                         >
@@ -75,7 +86,7 @@ export default function Header() {
                     return (
                       <div>
                         <button
-                          className="btn1"
+                          className={`${michroma.className} btn1`}
                           onClick={openAccountModal}
                           type="button"
                         >
@@ -100,7 +111,7 @@ export default function Header() {
         </div>
       </div>
 
-      {/*  <Sidebar toggle={toggle} /> */}
+      <Sidebar toggle={toggle} />
     </div>
   );
 }
