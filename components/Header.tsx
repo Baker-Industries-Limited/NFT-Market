@@ -48,16 +48,7 @@ export default function Header() {
                   authenticationStatus === "authenticated");
 
               return (
-                <div
-                  {...(!ready && {
-                    "aria-hidden": true,
-                    style: {
-                      opacity: 0,
-                      pointerEvents: "none",
-                      userSelect: "none",
-                    },
-                  })}
-                >
+                <div>
                   {(() => {
                     if (!connected) {
                       return (
