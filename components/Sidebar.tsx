@@ -73,7 +73,7 @@ export default function Sidebar({ toggle }) {
                   if (!connected) {
                     return (
                       <button
-                        className="btn1"
+                        className="btn3"
                         onClick={openConnectModal}
                         type="button"
                       >
@@ -85,7 +85,7 @@ export default function Sidebar({ toggle }) {
                   if (chain.unsupported || chain.id !== 97) {
                     return (
                       <button
-                        className="btn1"
+                        className="btn3"
                         onClick={openChainModal}
                         type="button"
                       >
