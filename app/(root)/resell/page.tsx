@@ -7,7 +7,7 @@
 import React, { useEffect, useState, useRef } from "react";
 import Footer from "../../../components/Footer";
 import Header from "../../../components/Header";
-import { useSigner, useAccount } from "wagmi";
+import { useAccount } from "wagmi";
 import { ethers } from "ethers";
 import { toast } from "react-toastify";
 import busdABI from "../../../abis/busd.json";
@@ -153,7 +153,7 @@ export default function Resell() {
     try {
       const allow = await contract.approve(
         marketAddress,
-        ethers.utils.parseEther(String(amount))
+        ethers.parseEther(String(amount))
       );
       await allow.wait();
       toast.update(id, {
