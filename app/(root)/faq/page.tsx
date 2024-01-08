@@ -7,6 +7,20 @@
 import React, { useState } from "react";
 import Footer from "../../../components/Footer";
 import Header from "../../../components/Header";
+import { Inter, Raleway, Michroma } from "next/font/google";
+
+const inter = Inter({
+  subsets: ["latin"],
+});
+
+const rale = Raleway({
+  subsets: ["latin"],
+});
+
+const michroma = Michroma({
+  subsets: ["latin"],
+  weight: "400",
+});
 
 export default function Faq() {
   const [faq1, setFaq1] = useState(false);
@@ -17,8 +31,8 @@ export default function Faq() {
     <div className="full-bg">
       <Header />
       <main className="faq-main">
-        <div className="faq-text1">FAQ</div>
-        <div className="faq-text2 ">
+        <div className={`${inter.className} faq-text1`}>FAQ</div>
+        <div className={`${inter.className} faq-text2`}>
           We have provided answers to some of the questions you have.
         </div>
 
@@ -26,15 +40,19 @@ export default function Faq() {
           <div>
             <div className="faqbox">
               <div className="faq-inner">
-                <div className="home_text12">How do I mint my NFT?</div>
+                <div className={`${michroma.className} home_text12`}>
+                  How do I mint my NFT?
+                </div>
                 {faq1 === true ? (
                   <img
+                    style={{ cursor: "pointer" }}
                     onClick={() => setFaq1(!faq1)}
                     src="./images/minus.svg"
                     alt="remove"
                   />
                 ) : (
                   <img
+                    style={{ cursor: "pointer" }}
                     onClick={() => setFaq1(!faq1)}
                     src="./images/add.svg"
                     alt="add"
@@ -42,7 +60,7 @@ export default function Faq() {
                 )}
               </div>
               {faq1 === true ? (
-                <div className="home_text13">
+                <div className={`${rale.className} home_text13`}>
                   You will need to have a wallet installed and set up. You can
                   open a MetaMask Wallet Please visit https://metamask.io on how
                   to open one)
@@ -62,17 +80,19 @@ export default function Faq() {
 
             <div className="faqbox">
               <div className="faq-inner">
-                <div className="home_text12">
+                <div className={`${michroma.className} home_text12`}>
                   Where does my NFT go after minting?
                 </div>
                 {faq2 === true ? (
                   <img
+                    style={{ cursor: "pointer" }}
                     onClick={() => setFaq2(!faq2)}
                     src="./images/minus.svg"
                     alt="remove"
                   />
                 ) : (
                   <img
+                    style={{ cursor: "pointer" }}
                     onClick={() => setFaq2(!faq2)}
                     src="./images/add.svg"
                     alt="add"
@@ -80,7 +100,7 @@ export default function Faq() {
                 )}
               </div>
               {faq2 ? (
-                <div className="home_text13">
+                <div className={`${rale.className} home_text13`}>
                   You will be able to view your minted NFT in your wallet
                   shortly after the transaction has been completed
                 </div>
@@ -89,17 +109,19 @@ export default function Faq() {
 
             <div className="faqbox">
               <div className="faq-inner">
-                <div className="home_text12">
+                <div className={`${michroma.className} home_text12`}>
                   Which token/coin can I use to mint?
                 </div>
                 {faq3 === true ? (
                   <img
+                    style={{ cursor: "pointer" }}
                     onClick={() => setFaq3(!faq3)}
                     src="./images/minus.svg"
                     alt="remove"
                   />
                 ) : (
                   <img
+                    style={{ cursor: "pointer" }}
                     onClick={() => setFaq3(!faq3)}
                     src="./images/add.svg"
                     alt="add"
@@ -107,7 +129,7 @@ export default function Faq() {
                 )}
               </div>
               {faq3 ? (
-                <div className="home_text13">
+                <div className={`${rale.className} home_text13`}>
                   You can mint a Bserve NFT with BUSD. Ensure you have enough
                   BUSD in your wallet to be able to successfully mint the NFT
                   you want.
@@ -117,15 +139,19 @@ export default function Faq() {
 
             <div className="faqbox">
               <div className="faq-inner">
-                <div className="home_text12">How do I start investing?</div>
+                <div className={`${michroma.className} home_text12`}>
+                  How do I start investing?
+                </div>
                 {faq4 === true ? (
                   <img
+                    style={{ cursor: "pointer" }}
                     onClick={() => setFaq4(!faq4)}
                     src="./images/minus.svg"
                     alt="remove"
                   />
                 ) : (
                   <img
+                    style={{ cursor: "pointer" }}
                     onClick={() => setFaq4(!faq4)}
                     src="./images/add.svg"
                     alt="add"
@@ -133,7 +159,7 @@ export default function Faq() {
                 )}
               </div>
               {faq4 === true ? (
-                <div className="home_text13">
+                <div className={`${rale.className} home_text13`}>
                   You start investing by minting any of the NFTs . Go to the
                   minting page and find an NFT you would like to mint
                 </div>

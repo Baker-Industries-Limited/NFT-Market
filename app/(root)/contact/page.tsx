@@ -7,6 +7,20 @@
 import React from "react";
 import Footer from "../../../components/Footer";
 import Header from "../../../components/Header";
+import { Inter, Raleway, Michroma } from "next/font/google";
+
+const inter = Inter({
+  subsets: ["latin"],
+});
+
+const rale = Raleway({
+  subsets: ["latin"],
+});
+
+const michroma = Michroma({
+  subsets: ["latin"],
+  weight: "400",
+});
 
 export default function Contact() {
   return (
@@ -14,19 +28,28 @@ export default function Contact() {
       <Header />
       <main className="contact-main">
         <section className="form">
-          <div className="contact-head">We would love to hear from you</div>
-
-          <div className="form-box">
-            <label className="label">Email Address</label>
-            <input className="input" placeholder="Enter your email address" />
+          <div className={`${inter.className} contact-head`}>
+            We would love to hear from you
           </div>
 
           <div className="form-box">
-            <label className="label">Write your message</label>
-            <textarea className="tarea"></textarea>
+            <label className={`${inter.className} label`}>Email Address</label>
+            <input
+              className={`${rale.className} input`}
+              placeholder="Enter your email address"
+            />
           </div>
 
-          <button className="contact-but">Send message</button>
+          <div className="form-box">
+            <label className={`${inter.className} label`}>
+              Write your message
+            </label>
+            <textarea className={`${rale.className} tarea`}></textarea>
+          </div>
+
+          <button className={`${inter.className} contact-but`}>
+            Send message
+          </button>
         </section>
       </main>
       <Footer />
