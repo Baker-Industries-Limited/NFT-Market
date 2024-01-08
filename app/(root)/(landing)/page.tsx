@@ -90,7 +90,7 @@ export default function Home() {
       <PreLoader />
       <motion.div className="full-bg">
         <Header />
-        <main>
+        <main className="home-main">
           <section>
             <h2 className={`${inter.className} home_text1`}>
               <AnimatedLetters

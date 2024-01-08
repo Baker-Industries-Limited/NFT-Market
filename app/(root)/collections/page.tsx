@@ -465,7 +465,7 @@ export default function Collections() {
   return (
     <div className="full-bg">
       <Header />
-      <main>
+      <main className="mint-main">
         <section className="mint-section1">
           <div className="mint_text1">My Collections</div>
           <div className="mint_textc2">{userNFT.length} Minted NFTs</div>

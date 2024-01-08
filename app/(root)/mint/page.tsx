@@ -231,7 +231,7 @@ export default function Mint() {
   return (
     <div className="full-bg">
       <Header />
-      <main>
+      <main className="mint-main">
         <section className="mint-section1">
           <div className="mint_text1">Mint {nft.length} BServe NFTs</div>
           <div className="mint_text2">BServe</div>
@@ -283,7 +283,7 @@ export default function Mint() {
           <div className="nftlist">
             {nft.map((item, index) => {
               return (
-                <Tilt className="">
+                <Tilt className="tilt">
                   <div key={index} className="nft">
                     <img className="nftimg" src={item.image} alt="nft1" />
                     <div className="nftflex">

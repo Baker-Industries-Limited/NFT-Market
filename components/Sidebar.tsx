@@ -73,7 +73,7 @@ export default function Sidebar({ toggle }) {
                   if (!connected) {
                     return (
                       <button
-                        className="btn3"
+                        className={`${michroma.className} btn3`}
                         onClick={openConnectModal}
                         type="button"
                       >
@@ -85,7 +85,7 @@ export default function Sidebar({ toggle }) {
                   if (chain.unsupported || chain.id !== 97) {
                     return (
                       <button
-                        className="btn3"
+                        className={`${michroma.className} btn3`}
                         onClick={openChainModal}
                         type="button"
                       >
@@ -97,7 +97,7 @@ export default function Sidebar({ toggle }) {
                   return (
                     <div>
                       <button
-                        className="btn3"
+                        className={`${michroma.className} btn3`}
                         onClick={openAccountModal}
                         type="button"
                       >

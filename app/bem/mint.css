@@ -335,6 +335,7 @@
     flex-wrap: wrap;
     margin-left: auto;
     margin-right: auto;
+    width: 100%;
   }
 
   .nftimg {
@@ -369,7 +370,6 @@
     background: rgba(255, 255, 255, 0.043);
     height: 20vh;
     background-size: cover;
-    margin-top: 80px;
     width: 80%;
   }
 
@@ -415,7 +415,7 @@
     background-color: white;
     border-radius: 4px;
     padding: 20px;
-    width: 90%;
+    width: 100%;
     background-color: #38c1f5;
     margin-top: 30px;
   }
@@ -436,6 +436,7 @@
     font-size: 14px;
     color: #ffffff;
     border: none;
+    margin-top: 50px;
   }
 
   .mint_textc2 {
@@ -478,5 +479,13 @@
     margin-bottom: 100px;
     margin-top: 100px;
     flex-direction: column;
+  }
+
+  .mint-main {
+    padding-top: 130px;
+  }
+
+  .tilt {
+    width: 100%;
   }
 }
