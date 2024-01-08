@@ -26,6 +26,20 @@ import {
   farm1000Address,
 } from "../../../utils/constants";
 import axios from "axios";
+import { Inter, Raleway, Michroma } from "next/font/google";
+
+const inter = Inter({
+  subsets: ["latin"],
+});
+
+const rale = Raleway({
+  subsets: ["latin"],
+});
+
+const michroma = Michroma({
+  subsets: ["latin"],
+  weight: "400",
+});
 
 export default function Collections() {
   const amountRef = useRef(0);
@@ -467,10 +481,12 @@ export default function Collections() {
       <Header />
       <main className="mint-main">
         <section className="mint-section1">
-          <div className="mint_text1">My Collections</div>
-          <div className="mint_textc2">{userNFT.length} Minted NFTs</div>
+          <div className={`${inter.className} mint_text1`}>My Collections</div>
+          <div className={`${inter.className} mint_text2`}>
+            {userNFT.length} Minted NFTs
+          </div>
           <input
-            className="searchc"
+            className={`${rale.className} searchc`}
             onChange={(evt) => search(evt.target.value)}
             type="search"
             placeholder="Search Nfts or collection name"
@@ -481,7 +497,7 @@ export default function Collections() {
           <div className="claims">
             <div className="claimbox">
               <div className="claimbox1">
-                <div className="claimText1">
+                <div className={`${inter.className} claimText1`}>
                   {" "}
                   <NumericFormat
                     value={farm}
@@ -496,7 +512,7 @@ export default function Collections() {
                   <select
                     onChange={getReward}
                     ref={selectRef2}
-                    className="snft2"
+                    className={`${rale.className} snft2`}
                   >
                     <option value={farm100Address}>$100 Tiers</option>
                     <option value={farm200Address}>$200 Tiers</option>
@@ -505,22 +521,30 @@ export default function Collections() {
                   </select>
                 </div>
               </div>
-              <div className="mint_text5">Farm NFT Reward</div>
+              <div className={`${rale.className} mint_text5`}>
+                Farm NFT Reward
+              </div>
 
-              <button onClick={claimReward} className="nftbut2">
+              <button
+                onClick={claimReward}
+                className={`${inter.className} nftbut2`}
+              >
                 Claim Rewards
               </button>
             </div>
 
             <div className="claimbox">
               <div className="claimbox1">
-                <div className="claimText1"> Buy Out NFT</div>
+                <div className={`${inter.className} claimText1`}>
+                  {" "}
+                  Buy Out NFT
+                </div>
                 <div>
                   {" "}
                   <select
                     onChange={getReward}
                     ref={selectRef3}
-                    className="snft2"
+                    className={`${rale.className} snft2`}
                   >
                     <option value={farm100Address}>$100 Tiers</option>
                     <option value={farm200Address}>$200 Tiers</option>
@@ -530,16 +554,16 @@ export default function Collections() {
                 </div>
               </div>
 
-              <div className="mint_text5">
+              <div className={`${rale.className} mint_text5`}>
                 <input
-                  className="list2"
+                  className={`${michroma.className} list2`}
                   placeholder="Enter Token ID "
                   ref={tokenRef}
                 />
               </div>
               <button
                 onClick={() => buyout(tokenRef.current.value)}
-                className="nftbut2"
+                className={`${inter.className} nftbut2`}
               >
                 Claim
               </button>
@@ -547,8 +571,12 @@ export default function Collections() {
           </div>
           <div className="mint-section2-inner">
             <div className="filterx">
-              <div className="filter-text">Filter by</div>
-              <select onChange={checkFilter2} ref={selectRef} className="snft">
+              <div className={`${rale.className} filter-text`}>Filter by</div>
+              <select
+                onChange={checkFilter2}
+                ref={selectRef}
+                className={`${rale.className} snft`}
+              >
                 <option>All</option>
                 <option>BakerFarmNFT ($100)</option>
                 <option>BakerFarmNFT ($200)</option>
@@ -588,19 +616,28 @@ export default function Collections() {
                   <img className="nftimg" src={item.image} alt="nft1" />
                   <div className="nftflex">
                     <div>
-                      <div className="mint_text3 ">{item.name}</div>
-                      <div className="mint_text4">{item.name.slice(0, -3)}</div>
+                      <div className={`${inter.className} mint_text3`}>
+                        {item.name}
+                      </div>
+                      <div className={`${inter.className} mint_text4`}>
+                        {item.name.slice(0, -3)}
+                      </div>
                     </div>
                     <div>
-                      <div className="mint_text3 "> {item.price} BUSD</div>
-                      <div className="mint_text4">Mint fee</div>
+                      <div className={`${inter.className} mint_text3`}>
+                        {" "}
+                        {item.price} BUSD
+                      </div>
+                      <div className={`${inter.className} mint_text4`}>
+                        Mint fee
+                      </div>
                     </div>
                   </div>
 
                   {item.sold ? (
                     <div>
                       <input
-                        className="list"
+                        className={`${michroma.className} list`}
                         placeholder="Enter listing price"
                         ref={amountRef}
                       />
@@ -609,7 +646,7 @@ export default function Collections() {
                   {item.price > Number(allowance) / 10 ** 18 ? (
                     <button
                       onClick={() => approve(item.price)}
-                      className="nftbut"
+                      className={`${inter.className} nftbut`}
                     >
                       Approve
                     </button>
@@ -622,21 +659,21 @@ export default function Collections() {
                           evt.target.parentElement.children[2].children[0].value
                         )
                       }
-                      className="nftbut"
+                      className={`${inter.className} nftbut`}
                     >
                       List
                     </button>
                   ) : item.approval !== marketAddress ? (
                     <button
                       onClick={() => approveNFT(item.tokenId, item.price)}
-                      className="nftbut"
+                      className={`${inter.className} nftbut`}
                     >
                       Approve NFT
                     </button>
                   ) : (
                     <button
                       onClick={() => cancel(item.nftaddress, item.tokenId)}
-                      className="nftbut"
+                      className={`${inter.className} nftbut`}
                     >
                       Cancel Listing
                     </button>
@@ -645,7 +682,7 @@ export default function Collections() {
               );
             })}
 
-            <div className="mint_textc2">
+            <div className={`${rale.className} mint_textc2`}>
               {loading === true
                 ? "Loading ......."
                 : userNFT.length === 0

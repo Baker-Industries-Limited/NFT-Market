@@ -41,6 +41,10 @@
   font-style: normal;
   font-weight: 400;
   font-size: 18px;
+  color: white;
+  background: #07242f;
+  border-radius: 4px;
+  padding: 10px;
 }
 
 .snft2 {

@@ -113,13 +113,9 @@ export default function Mint() {
       })
     );
 
-    //console.log(items);
-
     const filter = items.filter(
       (item) => item.owner === "0xCF59aC8b973A5B1fF452f2d1654899F97edecdFF"
     );
-
-    console.log("items", filter);
 
     setNFT(filter);
     setBack(filter);
