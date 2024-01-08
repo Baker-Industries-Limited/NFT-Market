@@ -24,6 +24,15 @@ import {
   farm1000Address,
 } from "../../../utils/constants";
 import axios from "axios";
+import { Inter, Raleway, Michroma } from "next/font/google";
+
+const inter = Inter({
+  subsets: ["latin"],
+});
+
+const rale = Raleway({
+  subsets: ["latin"],
+});
 
 export default function Mint() {
   const selectRef = useRef();
@@ -233,21 +242,28 @@ export default function Mint() {
       <Header />
       <main className="mint-main">
         <section className="mint-section1">
-          <div className="mint_text1">Mint {nft.length} BServe NFTs</div>
-          <div className="mint_text2">BServe</div>
+          <div className={`${inter.className} mint_text1`}>
+            Mint {nft.length} BServe NFTs
+          </div>
+          <div className={`${inter.className} mint_text2`}>BServe</div>
         </section>
 
         <section className="mint-section2">
           <div className="mint-section2-inner">
             <input
-              className="search "
+              className="search"
               type="search"
+              className={`${rale.className} search`}
               onChange={(evt) => search(evt.target.value)}
               placeholder="Search Nfts or collection name"
             />
             <div className="filterx">
               <div className="filter-text">Filter by</div>
-              <select onChange={checkFilter} ref={selectRef} className="snft">
+              <select
+                onChange={checkFilter}
+                ref={selectRef}
+                className={`${rale.className} snft`}
+              >
                 <option>All</option>
                 <option>BakerFarmNFT ($100)</option>
                 <option>BakerFarmNFT ($200)</option>
@@ -288,27 +304,34 @@ export default function Mint() {
                     <img className="nftimg" src={item.image} alt="nft1" />
                     <div className="nftflex">
                       <div>
-                        <div className="mint_text3 ">{item.name}</div>
-                        <div className="mint_text4">
+                        <div className={`${inter.className} mint_text3`}>
+                          {item.name}
+                        </div>
+                        <div className={`${inter.className} mint_text4`}>
                           {item.name.slice(0, -3)}
                         </div>
                       </div>
                       <div>
-                        <div className="mint_text3 "> {item.price} BUSD</div>
-                        <div className="mint_text4">Mint fee</div>
+                        <div className={`${inter.className} mint_text3`}>
+                          {" "}
+                          {item.price} BUSD
+                        </div>
+                        <div className={`${inter.className} mint_text4`}>
+                          Mint fee
+                        </div>
                       </div>
                     </div>
                     {item.price > Number(allowance) / 10 ** 18 ? (
                       <button
                         onClick={() => approve(item.price)}
-                        className="nftbut"
+                        className={`${inter.className} nftbut`}
                       >
                         Approve
                       </button>
                     ) : (
                       <button
                         onClick={() => buy(item.nftaddress, item.tokenId)}
-                        className="nftbut"
+                        className={`${inter.className} nftbut`}
                       >
                         Mint NFT
                       </button>
@@ -318,7 +341,7 @@ export default function Mint() {
               );
             })}
 
-            <div className="mint_textc2">
+            <div className={`${rale.className} mint_textc2`}>
               {loading === true
                 ? "Loading ......."
                 : nft.length === 0
