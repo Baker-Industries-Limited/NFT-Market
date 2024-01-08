@@ -33,7 +33,7 @@ export default function Sidebar({ toggle }) {
       <Link className="atag" href="/contact">
         <div className={`${michroma.className} side-item`}>Contact us</div>
       </Link>
-      <div className={`${michroma.className} side-item`}>Whitepaper</div>
+      {/* <div className={`${michroma.className} side-item`}>Whitepaper</div> */}
       <Link className="atag" href="/roadmap">
         <div className={`${michroma.className} side-item`}>Roadmap</div>
       </Link>
