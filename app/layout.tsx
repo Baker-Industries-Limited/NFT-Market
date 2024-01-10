@@ -17,6 +17,8 @@ import { configureChains, createConfig, WagmiConfig } from "wagmi";
 import { bscTestnet } from "wagmi/chains";
 import { alchemyProvider } from "wagmi/providers/alchemy";
 import { publicProvider } from "wagmi/providers/public";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -46,6 +48,7 @@ export default function RootLayout({
         <WagmiConfig config={wagmiConfig}>
           <RainbowKitProvider chains={chains}>{children}</RainbowKitProvider>
         </WagmiConfig>
+        <ToastContainer autoClose={15000} />
       </body>
     </html>
   );
