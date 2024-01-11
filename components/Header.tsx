@@ -104,6 +104,7 @@ export default function Header() {
           </ConnectButton.Custom>
           <img
             style={{ cursor: "pointer" }}
+            className="ham"
             onClick={() => changeToggle()}
             src="./images/ham.svg"
             alt="logo"

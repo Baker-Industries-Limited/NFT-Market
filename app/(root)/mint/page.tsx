@@ -107,8 +107,6 @@ export default function Mint() {
           listId: i.listId,
         };
 
-        console.log(item);
-
         return item;
       })
     );
@@ -126,7 +124,6 @@ export default function Mint() {
     let res;
     if (selectRef.current.value === "BakerFarmNFT ($100)") {
       res = back.filter((item) => item.nftaddress === farm100Address);
-      console.log(res);
       setNFT(res);
     } else if (selectRef.current.value === "BakerFarmNFT ($200)") {
       res = back.filter((item) => item.nftaddress === farm200Address);
@@ -169,7 +166,6 @@ export default function Mint() {
       setApp(1);
       //setTimeout(() => window.location.reload(), 5000);
     } catch (error) {
-      console.log(error);
       toast.update(id, {
         render: `${error.reason}`,
         type: "error",
@@ -181,7 +177,6 @@ export default function Mint() {
   };
 
   const buy = async (nftaddress, tokenId) => {
-    console.log(nftaddress, tokenId);
     const contract = await createMarketContract();
     const id = toast.loading("Transaction in progress..");
     try {
@@ -196,7 +191,6 @@ export default function Mint() {
       });
       setTimeout(() => window.location.reload(), 5000);
     } catch (error) {
-      console.log(error);
       toast.update(id, {
         render: `${error.reason}`,
         type: "error",
@@ -211,11 +205,8 @@ export default function Mint() {
     const contract = await createBUSDContract();
     try {
       const allow = await contract.allowance(owner, spender);
-      console.log("all", Number(allow));
       setAllowance(allow);
-    } catch (error) {
-      console.log(error);
-    }
+    } catch (error) {}
   };
 
   useEffect(() => {
