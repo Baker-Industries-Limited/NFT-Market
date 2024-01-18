@@ -31,7 +31,7 @@ export default function Faq() {
     <div className="full-bg">
       <Header />
       <main className="faq-main">
-        <div className={`${inter.className} faq-text1`}>FAQ</div>
+        <div className={`${inter.className} faq-text1  upl`}>FAQ</div>
         <div className={`${inter.className} faq-text2`}>
           We have provided answers to some of the questions you have.
         </div>

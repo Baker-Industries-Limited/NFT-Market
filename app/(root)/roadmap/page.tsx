@@ -14,7 +14,10 @@ export default function Roadmap() {
     <div className="full-bg">
       <Header />
       <main className="rmain">
-        <div className={`${inter.className} rm-text1`}>Bserve Roadmap 2024</div>
+        <div className={`${inter.className} rm-text1 `}>
+          Bserve Roadmap 2024
+        </div>
+
         {/* 
         <section className="section-rm1">
           <div className="c1"></div>
